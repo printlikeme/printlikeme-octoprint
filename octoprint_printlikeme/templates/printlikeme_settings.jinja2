@@ -1,0 +1,38 @@
+    <h4><a href="https://printlike.me" target="_blank">{{ _('PrintLike.me') }}</a> {{ _(' Plugin Configuration') }}</h4>
+	
+    <h5>{{ _('Account') }}</h5>
+
+	<form class="form-horizontal" data-bind="hidden: isLoggedIn(), submit: login">
+		<div class="control-group" title="{{ _('E-mail') }}">
+			<label class="control-label" for="email">{{ _('E-mail') }}</label>
+			<div class="controls">
+				<input type="text" class="input-block-level" required id="email">
+			</div>
+		</div>
+		<div class="control-group" title="{{ _('Password') }}">
+			<label class="control-label" for="password">{{ _('Password') }}</label>
+			<div class="controls">
+				<input type="password" class="input-block-level" required id="password">
+			</div>
+		</div>
+		<div class="control-group" title="{{ _('Login') }}">
+			<input type="submit" class="btn" value="{{ _('Login') }}"></input> 
+		</div>	
+		<div>
+			<span>{{ _('Need an account? ') }}<a href="https://printlike.me/su" target="_blank">{{ _('Sign up here.') }}</a></span>
+		</div>
+	</form>
+	
+	<form class="form-horizontal" data-bind="visible: isLoggedIn(), submit: logout">
+		<div class="control-group">
+			<span>{{ _('Logged in as ') }}<span data-bind="text: settingsViewModel.settings.plugins.printlikeme.user_email"></span></span>
+			<div class="control-group" title="{{ _('Logout') }}">
+				<input type="submit" class="btn" value="{{ _('Logout') }}"></input> 
+			</div>
+		</div>
+	</form>
+	
+	<div>
+		<span data-bind="visible: requestResult(), text: requestResultMessage"></span>
+	</div>
+	
