@@ -25,10 +25,13 @@
 	
 	<form class="form-horizontal" data-bind="visible: isLoggedIn(), submit: logout">
 		<div class="control-group">
-			<span>{{ _('Logged in as ') }}<span data-bind="text: settingsViewModel.settings.plugins.printlikeme.user_email"></span></span>
-			<div class="control-group" title="{{ _('Logout') }}">
-				<input type="submit" class="btn" value="{{ _('Logout') }}"></input> 
+			<span>{{ _('Logged in') }}</span>
+			<span data-bind="html: userName"></span>
+			<div data-bind="html: userLimits">
 			</div>
+		</div>
+		<div class="control-group" title="{{ _('Logout') }}">
+			<input type="submit" class="btn" value="{{ _('Logout') }}"></input> 
 		</div>
 	</form>
 	

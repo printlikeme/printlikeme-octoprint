@@ -2,6 +2,7 @@
 from __future__ import absolute_import
 
 import octoprint.plugin
+from octoprint.events import Events
 
 class PrintlikemePlugin(octoprint.plugin.SettingsPlugin,
     octoprint.plugin.AssetPlugin,
@@ -18,11 +19,10 @@ class PrintlikemePlugin(octoprint.plugin.SettingsPlugin,
             # be disabled with new plugin version release
             api_token="Q5Vjqs5f.CTiVVB5xBuosqkt3Rfx8Zt3xzp51zIIZ",
             user_key=None,
-            user_email=None,
         )
 
     def get_settings_restricted_paths(self):
-        return dict(admin=[["api_url"], ["api_token"], ["user_key"], ["user_email"], ],
+        return dict(admin=[["api_url"], ["api_token"], ["user_key"], ],
                     user=[[], ],
                     never=[[], ])
 
